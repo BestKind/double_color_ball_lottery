@@ -59,6 +59,7 @@ var rootCmd = &cobra.Command{
 			fmt.Printf("application %s version is %s\n", app.Name, app.Version)
 			return
 		}
+		services.NewLotteryService().CompleteData()
 		run()
 	},
 	PersistentPostRun: func(cmd *cobra.Command, args []string) {
